@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expenses-view.component.scss'],
 })
 export class ExpensesViewComponent {
+  expensesList: any[] = [];
+
   AddExpense(reason: any, amount: any) {
     const reasonStr = String(reason).trim();
     const amountNum = Number(amount);
@@ -18,6 +20,11 @@ export class ExpensesViewComponent {
 
     console.log('Expense Reason:', reasonStr);
     console.log('Expense Amount:', amountNum);
+
+    this.expensesList.push({
+      reason: reasonStr,
+      amount: amountNum,
+    })
   }
 
 }
