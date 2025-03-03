@@ -26,12 +26,17 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col size-md="6" offset-md="3">
         <ion-list id="expenses-list">
           <ion-item *ngFor="let item of expensesList">
             {{item.reason}}: ${{item.amount | number:'1.2-2'}}
           </ion-item>
         </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <p margin>Total Expenses: <span>{{expensesList.length}}</span></p>
       </ion-col>
     </ion-row>
   </ion-grid>
